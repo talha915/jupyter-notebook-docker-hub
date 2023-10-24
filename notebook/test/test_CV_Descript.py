@@ -1,5 +1,6 @@
 import nbimporter
 import pandas as pd
+import sys
 import os
 
 # Define the notebook path relative to the test file
