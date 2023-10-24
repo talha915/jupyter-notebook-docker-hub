@@ -1,6 +1,8 @@
 import nbimporter
 import pandas as pd
-from ..notebook.CV_Descript import show_all_data  # Import the function from your Jupyter Notebook
+import sys
+sys.path.append("..")
+from CV_Descript import show_all_data  # Import the function from your Jupyter Notebook
 
 # Define a test function
 def test_show_all_data():
