@@ -9,7 +9,7 @@ from notebook.CV_Descript import show_all_data  # Import the function from your 
 # Define a test function
 def test_show_all_data():
     # Read the CSV file and call the function
-    data = pd.read_csv('../data/jobdescript.csv')  # Make sure to import pandas
+    data = pd.read_csv('../app/data/jobdescript.csv')  # Make sure to import pandas
     df = show_all_data(data)
 
     # Check if df is a DataFrame
