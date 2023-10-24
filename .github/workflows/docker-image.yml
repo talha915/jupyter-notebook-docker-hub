@@ -36,7 +36,7 @@ jobs:
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_IMAGE_NAME }} .
     - name: Test with pytest
       run: |
-        pytest test
+         pytest notebook/test/test_CV_Descript.py
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
