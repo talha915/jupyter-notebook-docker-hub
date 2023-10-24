@@ -1,7 +1,7 @@
 import nbimporter
 import pandas as pd
 import sys
-sys.path.append("..")
+sys.path.append("../notebook")
 from CV_Descript import show_all_data  # Import the function from your Jupyter Notebook
 
 # Define a test function
