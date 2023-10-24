@@ -8,7 +8,7 @@ WORKDIR /app
 COPY ./notebook /app/notebook
 COPY ./README.md /app
 COPY ./requirements.txt /app
-COPY ./data /app/
+COPY ./data /app/data
 
 # Install any additional dependencies if needed (e.g., pandas)
 RUN pip install -r /app/requirements.txt
