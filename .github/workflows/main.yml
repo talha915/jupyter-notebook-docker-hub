@@ -18,10 +18,8 @@ jobs:
     steps:
       - name: Trigger CI Workflow
         if: github.event_name == 'pull_request'
-        run: echo "Triggering CI Workflow"
-        # Add any additional CI-related actions here
+        uses: ./.github/workflows/ci.yml
 
       - name: Trigger CD Workflow
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: echo "Triggering CD Workflow"
-        # Add any additional CD-related actions here
+        uses: ./.github/workflows/cd.yml
