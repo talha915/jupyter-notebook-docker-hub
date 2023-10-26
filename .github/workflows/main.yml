@@ -1,0 +1,25 @@
+name: Main Workflow
+
+on:
+  workflow_run:
+    workflows:
+      - "CI"
+      - "CD"
+    types:
+      - pull_request
+      - push:
+          branches:
+            - main
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger CI Workflow
+        if: github.event_name == 'pull_request'
+        uses: ./.github/workflows/CI.yml
+
+      - name: Trigger CD Workflow
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: ./.github/workflows/CD.yml
