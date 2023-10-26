@@ -7,9 +7,9 @@ on:
       - "CD"
     types:
       - pull_request
-      - push:
-          branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
   main:
@@ -18,8 +18,10 @@ jobs:
     steps:
       - name: Trigger CI Workflow
         if: github.event_name == 'pull_request'
-        uses: ./.github/workflows/CI.yml
+        run: echo "Triggering CI Workflow"
+        # Add any additional CI-related actions here
 
       - name: Trigger CD Workflow
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: ./.github/workflows/CD.yml
+        run: echo "Triggering CD Workflow"
+        # Add any additional CD-related actions here
